@@ -6,3 +6,15 @@
        name: nginx 
        state: latest 
        update_cache: yes
+ 
+    - name: Configure nginx web root folder in Ubuntu ansible node
+      copy: src=default dest=/etc/nginx/sites-available/default backup=yes
+
+    - name: Create the custom web root folder in Ubuntu ansible node
+      file: path=/var/html state=directory mode=0777
+
+    - name: Restart nginx web server in Ubuntu ansible node
+      service: name=nginx state=restarted 
+
+    - name: Deploy custom web page into nginx web server on Ubuntu ansible node
+      copy: src=index.html dest=/var/html/index.html
