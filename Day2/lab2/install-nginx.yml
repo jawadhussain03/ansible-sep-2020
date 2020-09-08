@@ -1,0 +1,31 @@
+- name: This play will install, configure and deploy custom web page into nginx web server 
+  hosts: all 
+  tasks:
+    - name: Install nginx web server in Ubuntu ansible node
+      when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: Install Extra Packages for Enterprise Linux (EPEL) in CentOS ansible node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      yum: name=epel-release state=latest
+
+    - name: Install nginx web server in CentOS ansible node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      yum: name=nginx state=latest
+ 
+    - name: Configure nginx web root folder in Ubuntu ansible node
+      when: ( ansible_distribution == "Ubuntu" and ansible_os_family == "Debian" )
+      copy: src=default dest=/etc/nginx/sites-available/default backup=yes
+
+    - name: Configure nginx web root folder in CentOS ansible node
+      when: ( ansible_distribution == "CentOS" and ansible_os_family == "RedHat" )
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf backup=yes
+
+    - name: Create the custom web root folder in ansible node
+      file: path=/var/html state=directory mode=2775
+
+    - name: Restart nginx web server in ansible node
+      service: name=nginx state=restarted 
+
+    - name: Deploy custom web page into nginx web server on ansible node
+      template: src=index.html dest=/var/html/index.html
