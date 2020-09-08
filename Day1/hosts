@@ -1,0 +1,9 @@
+[all]
+centos77 ansible_user=ansible ansible_password=Abridge@123 ansible_host=192.168.112.130
+ubuntu1804 ansible_user=ansible ansible_password=Abridge@123 ansible_host=192.168.112.131
+
+[centos]
+centos77
+
+[ubuntu]
+ubuntu1804
