@@ -1,6 +1,12 @@
 - name: This play will install, configure and deploy custom web page into nginx web server 
   hosts: all 
+  vars:
+   - greeting_msg: DevOps!
+   - hypervisor_tool: VMWare Workstation
+   - conf_mgr_tool: Ansible
+
   tasks:
     - include: install-nginx-{{ansible_distribution|lower}}.yml
     - include: configure-nginx-{{ansible_distribution|lower}}.yml
     - include: common-nginx-tasks.yml
+
