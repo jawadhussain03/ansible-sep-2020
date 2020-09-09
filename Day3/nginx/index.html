@@ -4,7 +4,7 @@
 		<h3>OS - {{ ansible_distribution }}</h3>
 		<h3>OS version - {{ ansible_distribution_version }}</h3>
                 <h3>Hostname - {{ansible_hostname}}</h3>
-                <h3>IP Addresss - {{ansible_ens33.ipv4.address}}</h3>
+                <h3>IP Addresss - {{ansible_default_ipv4.address}}</h3>
                 <h3>VM type - {{hypervisor_tool}}</h3>
                 <h3>Configured by - {{conf_mgr_tool}}</h3>
 	</body>

@@ -1,0 +1,14 @@
+2020-09-09 04:42:50,261 p=72617 u=root n=ansible | ubuntu | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2020-09-09 04:42:50,387 p=72617 u=root n=ansible | centos | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
