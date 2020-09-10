@@ -1,0 +1,12 @@
+<html>
+	<title>Welcome to {{greeting_msg}}</title>
+
+	<body>
+		<h1>OS - {{ansible_distribution}}</h1>
+		<h1>OS Version - {{ansible_distribution_version}}</h1>
+		<h1>Hostname - {{ansible_hostname}}</h1>
+		<h1>IP Address- {{ansible_default_ipv4.address}}</h1>
+		<h1>Provisioned by - {{hypervisor_tool}}</h1>
+		<h1>Configured by - {{conf_mgr_tool}}</h1>
+	</body>
+</html>

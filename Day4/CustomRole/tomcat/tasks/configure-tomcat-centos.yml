@@ -1,0 +1,4 @@
+- name: Configure tomcat document root folder and grant permission
+  copy: src=httpd.conf dest=/etc/httpd/conf/httpd.conf backup=yes
+  notify:
+     - Restart tomcat in CentOS ansible node
