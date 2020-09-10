@@ -1,0 +1,16 @@
+- name: Demonstrates sudo elevation
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Install vim in ubuntu node
+      when: ansible_os_family == "Debian"
+      apt: name=vim state=latest update_cache=yes
+
+    - name: Install EPEL package in centos node
+      when: ansible_os_family == "RedHat"
+      yum: name=epel-release state=latest
+
+    - name: Install vim in centos node
+      when: ansible_os_family == "RedHat"
+      yum: name=vim state=latest
