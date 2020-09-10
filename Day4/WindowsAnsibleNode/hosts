@@ -1,0 +1,8 @@
+[all]
+windows ansible_host=3.84.232.114 ansible_user=Administrator ansible_password==CyZsZzp4Q48tcQL-=FOQ!zU2SC%$hx
+
+
+[all:vars]
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
