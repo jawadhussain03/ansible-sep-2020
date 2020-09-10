@@ -395,3 +395,318 @@ deprecation_warnings=False in ansible.cfg.
 }
 2020-09-10 00:11:51,934 p=5926 u=root n=ansible | PLAY RECAP ********************************************************************************************************************************************
 2020-09-10 00:11:51,935 p=5926 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-09-10 00:19:51,350 p=6132 u=root n=ansible | PLAY [Demonstrates use of the sequence loop] **********************************************************************************************************
+2020-09-10 00:19:51,373 p=6132 u=root n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************
+2020-09-10 00:19:53,922 p=6132 u=root n=ansible | ok: [localhost]
+2020-09-10 00:19:53,955 p=6132 u=root n=ansible | TASK [debug] ******************************************************************************************************************************************
+2020-09-10 00:19:54,074 p=6132 u=root n=ansible | ok: [localhost] => (item=001) => {
+    "msg": "Iteration - 001"
+}
+2020-09-10 00:19:54,082 p=6132 u=root n=ansible | ok: [localhost] => (item=002) => {
+    "msg": "Iteration - 002"
+}
+2020-09-10 00:19:54,092 p=6132 u=root n=ansible | ok: [localhost] => (item=003) => {
+    "msg": "Iteration - 003"
+}
+2020-09-10 00:19:54,101 p=6132 u=root n=ansible | ok: [localhost] => (item=004) => {
+    "msg": "Iteration - 004"
+}
+2020-09-10 00:19:54,109 p=6132 u=root n=ansible | ok: [localhost] => (item=005) => {
+    "msg": "Iteration - 005"
+}
+2020-09-10 00:19:54,120 p=6132 u=root n=ansible | ok: [localhost] => (item=006) => {
+    "msg": "Iteration - 006"
+}
+2020-09-10 00:19:54,136 p=6132 u=root n=ansible | ok: [localhost] => (item=007) => {
+    "msg": "Iteration - 007"
+}
+2020-09-10 00:19:54,149 p=6132 u=root n=ansible | ok: [localhost] => (item=008) => {
+    "msg": "Iteration - 008"
+}
+2020-09-10 00:19:54,156 p=6132 u=root n=ansible | ok: [localhost] => (item=009) => {
+    "msg": "Iteration - 009"
+}
+2020-09-10 00:19:54,167 p=6132 u=root n=ansible | ok: [localhost] => (item=010) => {
+    "msg": "Iteration - 010"
+}
+2020-09-10 00:19:54,199 p=6132 u=root n=ansible | ok: [localhost] => (item=011) => {
+    "msg": "Iteration - 011"
+}
+2020-09-10 00:19:54,201 p=6132 u=root n=ansible | ok: [localhost] => (item=012) => {
+    "msg": "Iteration - 012"
+}
+2020-09-10 00:19:54,202 p=6132 u=root n=ansible | ok: [localhost] => (item=013) => {
+    "msg": "Iteration - 013"
+}
+2020-09-10 00:19:54,247 p=6132 u=root n=ansible | ok: [localhost] => (item=014) => {
+    "msg": "Iteration - 014"
+}
+2020-09-10 00:19:54,248 p=6132 u=root n=ansible | ok: [localhost] => (item=015) => {
+    "msg": "Iteration - 015"
+}
+2020-09-10 00:19:54,249 p=6132 u=root n=ansible | ok: [localhost] => (item=016) => {
+    "msg": "Iteration - 016"
+}
+2020-09-10 00:19:54,258 p=6132 u=root n=ansible | ok: [localhost] => (item=017) => {
+    "msg": "Iteration - 017"
+}
+2020-09-10 00:19:54,270 p=6132 u=root n=ansible | ok: [localhost] => (item=018) => {
+    "msg": "Iteration - 018"
+}
+2020-09-10 00:19:54,292 p=6132 u=root n=ansible | ok: [localhost] => (item=019) => {
+    "msg": "Iteration - 019"
+}
+2020-09-10 00:19:54,292 p=6132 u=root n=ansible | ok: [localhost] => (item=020) => {
+    "msg": "Iteration - 020"
+}
+2020-09-10 00:19:54,298 p=6132 u=root n=ansible | ok: [localhost] => (item=021) => {
+    "msg": "Iteration - 021"
+}
+2020-09-10 00:19:54,339 p=6132 u=root n=ansible | ok: [localhost] => (item=022) => {
+    "msg": "Iteration - 022"
+}
+2020-09-10 00:19:54,341 p=6132 u=root n=ansible | ok: [localhost] => (item=023) => {
+    "msg": "Iteration - 023"
+}
+2020-09-10 00:19:54,342 p=6132 u=root n=ansible | ok: [localhost] => (item=024) => {
+    "msg": "Iteration - 024"
+}
+2020-09-10 00:19:54,343 p=6132 u=root n=ansible | ok: [localhost] => (item=025) => {
+    "msg": "Iteration - 025"
+}
+2020-09-10 00:19:54,355 p=6132 u=root n=ansible | ok: [localhost] => (item=026) => {
+    "msg": "Iteration - 026"
+}
+2020-09-10 00:19:54,377 p=6132 u=root n=ansible | ok: [localhost] => (item=027) => {
+    "msg": "Iteration - 027"
+}
+2020-09-10 00:19:54,378 p=6132 u=root n=ansible | ok: [localhost] => (item=028) => {
+    "msg": "Iteration - 028"
+}
+2020-09-10 00:19:54,379 p=6132 u=root n=ansible | ok: [localhost] => (item=029) => {
+    "msg": "Iteration - 029"
+}
+2020-09-10 00:19:54,392 p=6132 u=root n=ansible | ok: [localhost] => (item=030) => {
+    "msg": "Iteration - 030"
+}
+2020-09-10 00:19:54,424 p=6132 u=root n=ansible | ok: [localhost] => (item=031) => {
+    "msg": "Iteration - 031"
+}
+2020-09-10 00:19:54,425 p=6132 u=root n=ansible | ok: [localhost] => (item=032) => {
+    "msg": "Iteration - 032"
+}
+2020-09-10 00:19:54,426 p=6132 u=root n=ansible | ok: [localhost] => (item=033) => {
+    "msg": "Iteration - 033"
+}
+2020-09-10 00:19:54,435 p=6132 u=root n=ansible | ok: [localhost] => (item=034) => {
+    "msg": "Iteration - 034"
+}
+2020-09-10 00:19:54,472 p=6132 u=root n=ansible | ok: [localhost] => (item=035) => {
+    "msg": "Iteration - 035"
+}
+2020-09-10 00:19:54,474 p=6132 u=root n=ansible | ok: [localhost] => (item=036) => {
+    "msg": "Iteration - 036"
+}
+2020-09-10 00:19:54,475 p=6132 u=root n=ansible | ok: [localhost] => (item=037) => {
+    "msg": "Iteration - 037"
+}
+2020-09-10 00:19:54,476 p=6132 u=root n=ansible | ok: [localhost] => (item=038) => {
+    "msg": "Iteration - 038"
+}
+2020-09-10 00:19:54,509 p=6132 u=root n=ansible | ok: [localhost] => (item=039) => {
+    "msg": "Iteration - 039"
+}
+2020-09-10 00:19:54,510 p=6132 u=root n=ansible | ok: [localhost] => (item=040) => {
+    "msg": "Iteration - 040"
+}
+2020-09-10 00:19:54,511 p=6132 u=root n=ansible | ok: [localhost] => (item=041) => {
+    "msg": "Iteration - 041"
+}
+2020-09-10 00:19:54,512 p=6132 u=root n=ansible | ok: [localhost] => (item=042) => {
+    "msg": "Iteration - 042"
+}
+2020-09-10 00:19:54,522 p=6132 u=root n=ansible | ok: [localhost] => (item=043) => {
+    "msg": "Iteration - 043"
+}
+2020-09-10 00:19:54,553 p=6132 u=root n=ansible | ok: [localhost] => (item=044) => {
+    "msg": "Iteration - 044"
+}
+2020-09-10 00:19:54,555 p=6132 u=root n=ansible | ok: [localhost] => (item=045) => {
+    "msg": "Iteration - 045"
+}
+2020-09-10 00:19:54,593 p=6132 u=root n=ansible | ok: [localhost] => (item=046) => {
+    "msg": "Iteration - 046"
+}
+2020-09-10 00:19:54,598 p=6132 u=root n=ansible | ok: [localhost] => (item=047) => {
+    "msg": "Iteration - 047"
+}
+2020-09-10 00:19:54,599 p=6132 u=root n=ansible | ok: [localhost] => (item=048) => {
+    "msg": "Iteration - 048"
+}
+2020-09-10 00:19:54,615 p=6132 u=root n=ansible | ok: [localhost] => (item=049) => {
+    "msg": "Iteration - 049"
+}
+2020-09-10 00:19:54,638 p=6132 u=root n=ansible | ok: [localhost] => (item=050) => {
+    "msg": "Iteration - 050"
+}
+2020-09-10 00:19:54,639 p=6132 u=root n=ansible | ok: [localhost] => (item=051) => {
+    "msg": "Iteration - 051"
+}
+2020-09-10 00:19:54,641 p=6132 u=root n=ansible | ok: [localhost] => (item=052) => {
+    "msg": "Iteration - 052"
+}
+2020-09-10 00:19:54,681 p=6132 u=root n=ansible | ok: [localhost] => (item=053) => {
+    "msg": "Iteration - 053"
+}
+2020-09-10 00:19:54,684 p=6132 u=root n=ansible | ok: [localhost] => (item=054) => {
+    "msg": "Iteration - 054"
+}
+2020-09-10 00:19:54,685 p=6132 u=root n=ansible | ok: [localhost] => (item=055) => {
+    "msg": "Iteration - 055"
+}
+2020-09-10 00:19:54,691 p=6132 u=root n=ansible | ok: [localhost] => (item=056) => {
+    "msg": "Iteration - 056"
+}
+2020-09-10 00:19:54,719 p=6132 u=root n=ansible | ok: [localhost] => (item=057) => {
+    "msg": "Iteration - 057"
+}
+2020-09-10 00:19:54,720 p=6132 u=root n=ansible | ok: [localhost] => (item=058) => {
+    "msg": "Iteration - 058"
+}
+2020-09-10 00:19:54,730 p=6132 u=root n=ansible | ok: [localhost] => (item=059) => {
+    "msg": "Iteration - 059"
+}
+2020-09-10 00:19:54,738 p=6132 u=root n=ansible | ok: [localhost] => (item=060) => {
+    "msg": "Iteration - 060"
+}
+2020-09-10 00:19:54,760 p=6132 u=root n=ansible | ok: [localhost] => (item=061) => {
+    "msg": "Iteration - 061"
+}
+2020-09-10 00:19:54,780 p=6132 u=root n=ansible | ok: [localhost] => (item=062) => {
+    "msg": "Iteration - 062"
+}
+2020-09-10 00:19:54,781 p=6132 u=root n=ansible | ok: [localhost] => (item=063) => {
+    "msg": "Iteration - 063"
+}
+2020-09-10 00:19:54,789 p=6132 u=root n=ansible | ok: [localhost] => (item=064) => {
+    "msg": "Iteration - 064"
+}
+2020-09-10 00:19:54,818 p=6132 u=root n=ansible | ok: [localhost] => (item=065) => {
+    "msg": "Iteration - 065"
+}
+2020-09-10 00:19:54,820 p=6132 u=root n=ansible | ok: [localhost] => (item=066) => {
+    "msg": "Iteration - 066"
+}
+2020-09-10 00:19:54,826 p=6132 u=root n=ansible | ok: [localhost] => (item=067) => {
+    "msg": "Iteration - 067"
+}
+2020-09-10 00:19:54,859 p=6132 u=root n=ansible | ok: [localhost] => (item=068) => {
+    "msg": "Iteration - 068"
+}
+2020-09-10 00:19:54,860 p=6132 u=root n=ansible | ok: [localhost] => (item=069) => {
+    "msg": "Iteration - 069"
+}
+2020-09-10 00:19:54,861 p=6132 u=root n=ansible | ok: [localhost] => (item=070) => {
+    "msg": "Iteration - 070"
+}
+2020-09-10 00:19:54,873 p=6132 u=root n=ansible | ok: [localhost] => (item=071) => {
+    "msg": "Iteration - 071"
+}
+2020-09-10 00:19:54,981 p=6132 u=root n=ansible | ok: [localhost] => (item=072) => {
+    "msg": "Iteration - 072"
+}
+2020-09-10 00:19:54,990 p=6132 u=root n=ansible | ok: [localhost] => (item=073) => {
+    "msg": "Iteration - 073"
+}
+2020-09-10 00:19:55,002 p=6132 u=root n=ansible | ok: [localhost] => (item=074) => {
+    "msg": "Iteration - 074"
+}
+2020-09-10 00:19:55,017 p=6132 u=root n=ansible | ok: [localhost] => (item=075) => {
+    "msg": "Iteration - 075"
+}
+2020-09-10 00:19:55,027 p=6132 u=root n=ansible | ok: [localhost] => (item=076) => {
+    "msg": "Iteration - 076"
+}
+2020-09-10 00:19:55,051 p=6132 u=root n=ansible | ok: [localhost] => (item=077) => {
+    "msg": "Iteration - 077"
+}
+2020-09-10 00:19:55,054 p=6132 u=root n=ansible | ok: [localhost] => (item=078) => {
+    "msg": "Iteration - 078"
+}
+2020-09-10 00:19:55,062 p=6132 u=root n=ansible | ok: [localhost] => (item=079) => {
+    "msg": "Iteration - 079"
+}
+2020-09-10 00:19:55,071 p=6132 u=root n=ansible | ok: [localhost] => (item=080) => {
+    "msg": "Iteration - 080"
+}
+2020-09-10 00:19:55,097 p=6132 u=root n=ansible | ok: [localhost] => (item=081) => {
+    "msg": "Iteration - 081"
+}
+2020-09-10 00:19:55,098 p=6132 u=root n=ansible | ok: [localhost] => (item=082) => {
+    "msg": "Iteration - 082"
+}
+2020-09-10 00:19:55,106 p=6132 u=root n=ansible | ok: [localhost] => (item=083) => {
+    "msg": "Iteration - 083"
+}
+2020-09-10 00:19:55,115 p=6132 u=root n=ansible | ok: [localhost] => (item=084) => {
+    "msg": "Iteration - 084"
+}
+2020-09-10 00:19:55,142 p=6132 u=root n=ansible | ok: [localhost] => (item=085) => {
+    "msg": "Iteration - 085"
+}
+2020-09-10 00:19:55,143 p=6132 u=root n=ansible | ok: [localhost] => (item=086) => {
+    "msg": "Iteration - 086"
+}
+2020-09-10 00:19:55,150 p=6132 u=root n=ansible | ok: [localhost] => (item=087) => {
+    "msg": "Iteration - 087"
+}
+2020-09-10 00:19:55,159 p=6132 u=root n=ansible | ok: [localhost] => (item=088) => {
+    "msg": "Iteration - 088"
+}
+2020-09-10 00:19:55,183 p=6132 u=root n=ansible | ok: [localhost] => (item=089) => {
+    "msg": "Iteration - 089"
+}
+2020-09-10 00:19:55,186 p=6132 u=root n=ansible | ok: [localhost] => (item=090) => {
+    "msg": "Iteration - 090"
+}
+2020-09-10 00:19:55,196 p=6132 u=root n=ansible | ok: [localhost] => (item=091) => {
+    "msg": "Iteration - 091"
+}
+2020-09-10 00:19:55,230 p=6132 u=root n=ansible | ok: [localhost] => (item=092) => {
+    "msg": "Iteration - 092"
+}
+2020-09-10 00:19:55,233 p=6132 u=root n=ansible | ok: [localhost] => (item=093) => {
+    "msg": "Iteration - 093"
+}
+2020-09-10 00:19:55,239 p=6132 u=root n=ansible | ok: [localhost] => (item=094) => {
+    "msg": "Iteration - 094"
+}
+2020-09-10 00:19:55,265 p=6132 u=root n=ansible | ok: [localhost] => (item=095) => {
+    "msg": "Iteration - 095"
+}
+2020-09-10 00:19:55,266 p=6132 u=root n=ansible | ok: [localhost] => (item=096) => {
+    "msg": "Iteration - 096"
+}
+2020-09-10 00:19:55,273 p=6132 u=root n=ansible | ok: [localhost] => (item=097) => {
+    "msg": "Iteration - 097"
+}
+2020-09-10 00:19:55,276 p=6132 u=root n=ansible | ok: [localhost] => (item=098) => {
+    "msg": "Iteration - 098"
+}
+2020-09-10 00:19:55,307 p=6132 u=root n=ansible | ok: [localhost] => (item=099) => {
+    "msg": "Iteration - 099"
+}
+2020-09-10 00:19:55,308 p=6132 u=root n=ansible | ok: [localhost] => (item=100) => {
+    "msg": "Iteration - 100"
+}
+2020-09-10 00:19:55,416 p=6132 u=root n=ansible | TASK [shell] ******************************************************************************************************************************************
+2020-09-10 00:19:56,623 p=6132 u=root n=ansible | changed: [localhost] => (item=001)
+2020-09-10 00:19:57,086 p=6132 u=root n=ansible | changed: [localhost] => (item=002)
+2020-09-10 00:19:57,523 p=6132 u=root n=ansible | changed: [localhost] => (item=003)
+2020-09-10 00:19:58,000 p=6132 u=root n=ansible | changed: [localhost] => (item=004)
+2020-09-10 00:19:58,452 p=6132 u=root n=ansible | changed: [localhost] => (item=005)
+2020-09-10 00:19:58,459 p=6132 u=root n=ansible | [WARNING]: Consider using the file module with state=touch rather than running 'touch'.  If you need to use command because file is insufficient you
+can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-09-10 00:19:58,467 p=6132 u=root n=ansible | PLAY RECAP ********************************************************************************************************************************************
+2020-09-10 00:19:58,467 p=6132 u=root n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,22 @@
+- name: Demonstrates auto-generation of static inventory folder structure
+  hosts: localhost
+  tasks:
+    - name: Create the host and group vars folder
+      shell: mkdir -p host_vars group_vars
+
+    - name: create ubuntu ansible nodes
+      shell: "touch host_vars/ubuntu{{item}}"
+      with_sequence: start=130 end=140 format="%03d"
+
+    - name: Create an empty inventory file
+      shell: touch hosts && echo ubuntu[130:140] > hosts
+
+    - name: create all file under group_vars
+      shell: touch group_vars/all
+
+    - name: Add ansible host ip for ansible nodes
+      shell: "echo ansible_host: 192.168.112.{{item}} > host_vars/ubuntu{{item}}"
+      with_sequence: start=130 end=140 format="%03d"
+
+    - name: Populate common variables
+      copy: src=all dest=group_vars/all
