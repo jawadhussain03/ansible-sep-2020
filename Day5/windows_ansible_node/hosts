@@ -1,0 +1,21 @@
+[all]
+ubuntu1 ansible_port=2001
+ubuntu2 ansible_port=2002
+win_ec2 ansible_port=5986
+
+[all:vars]
+ansible_user=root
+ansible_host=localhost
+ansible_private_key_file=/root/.ssh/id_rsa
+
+[windows]
+win_ec2
+
+[windows:vars]
+ansible_user=Administrator
+ansible_password=
+ansible_host=3.85.159.94
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+
