@@ -1,0 +1,5 @@
+software_tools:
+  - vim
+  - tree
+  - net-tools
+  - tmux

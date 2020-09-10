@@ -1,0 +1,55 @@
+2020-09-09 23:44:34,278 p=5020 u=root n=ansible | PLAY [Demonstrates use of list variable in a playbook] ****************************************************************
+2020-09-09 23:44:34,306 p=5020 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:44:37,683 p=5020 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:44:37,701 p=5020 u=root n=ansible | ok: [centos]
+2020-09-09 23:44:37,750 p=5020 u=root n=ansible | TASK [Install the list of software tools in Ubuntu nodes] *************************************************************
+2020-09-09 23:44:37,876 p=5057 u=root n=ansible | [DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated. Instead of using 
+a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name: '{{software_tools}}'` and remove 
+the loop. This feature will be removed in version 2.11. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-09-09 23:44:37,951 p=5058 u=root n=ansible | [DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated. Instead of using 
+a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name: '{{software_tools}}'` and remove 
+the loop. This feature will be removed in version 2.11. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-09-09 23:44:37,992 p=5020 u=root n=ansible | skipping: [centos] => (item=[]) 
+2020-09-09 23:45:12,782 p=5020 u=root n=ansible | changed: [ubuntu] => (item=[u'vim', u'tree', u'tmux', u'net-tools'])
+2020-09-09 23:45:12,839 p=5020 u=root n=ansible | TASK [Install the list of software tools in CentOS nodes] *************************************************************
+2020-09-09 23:45:12,942 p=5076 u=root n=ansible | [DEPRECATION WARNING]: Invoking "yum" only once while using a loop via squash_actions is deprecated. Instead of using 
+a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name: '{{software_tools}}'` and remove 
+the loop. This feature will be removed in version 2.11. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-09-09 23:45:12,986 p=5020 u=root n=ansible | skipping: [ubuntu] => (item=[]) 
+2020-09-09 23:45:13,056 p=5077 u=root n=ansible | [DEPRECATION WARNING]: Invoking "yum" only once while using a loop via squash_actions is deprecated. Instead of using 
+a loop to supply multiple items and specifying `name: "{{item}}"`, please use `name: '{{software_tools}}'` and remove 
+the loop. This feature will be removed in version 2.11. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-09-09 23:46:01,171 p=5020 u=root n=ansible | changed: [centos] => (item=[u'vim', u'tree', u'tmux', u'net-tools'])
+2020-09-09 23:46:01,178 p=5020 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:46:01,179 p=5020 u=root n=ansible | centos                     : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:46:01,179 p=5020 u=root n=ansible | ubuntu                     : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:52:09,649 p=5360 u=root n=ansible | PLAY [Demonstrates use of list variable in a playbook] ****************************************************************
+2020-09-09 23:52:09,673 p=5360 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:52:13,072 p=5360 u=root n=ansible | ok: [centos]
+2020-09-09 23:52:14,065 p=5360 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:52:14,117 p=5360 u=root n=ansible | TASK [Install the list of software tools in Ubuntu nodes] *************************************************************
+2020-09-09 23:52:14,278 p=5360 u=root n=ansible | skipping: [centos]
+2020-09-09 23:52:19,885 p=5360 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:52:19,950 p=5360 u=root n=ansible | TASK [Install the list of software tools in CentOS nodes] *************************************************************
+2020-09-09 23:52:20,081 p=5360 u=root n=ansible | skipping: [ubuntu]
+2020-09-09 23:52:56,066 p=5360 u=root n=ansible | ok: [centos]
+2020-09-09 23:52:56,072 p=5360 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:52:56,073 p=5360 u=root n=ansible | centos                     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:52:56,073 p=5360 u=root n=ansible | ubuntu                     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:55:44,265 p=5510 u=root n=ansible | PLAY [Demonstrates use of list variable in a playbook] ****************************************************************
+2020-09-09 23:55:44,299 p=5510 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:55:47,551 p=5510 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:55:47,662 p=5510 u=root n=ansible | ok: [centos]
+2020-09-09 23:55:47,713 p=5510 u=root n=ansible | TASK [Install the list of software tools in Ubuntu nodes] *************************************************************
+2020-09-09 23:55:47,919 p=5510 u=root n=ansible | skipping: [centos]
+2020-09-09 23:56:06,493 p=5510 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:56:06,547 p=5510 u=root n=ansible | TASK [Install the list of software tools in CentOS nodes] *************************************************************
+2020-09-09 23:56:06,655 p=5510 u=root n=ansible | skipping: [ubuntu]
+2020-09-09 23:56:38,106 p=5510 u=root n=ansible | ok: [centos]
+2020-09-09 23:56:38,114 p=5510 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:56:38,115 p=5510 u=root n=ansible | centos                     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:56:38,115 p=5510 u=root n=ansible | ubuntu                     : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

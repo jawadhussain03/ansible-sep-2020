@@ -1,0 +1,14 @@
+- name: Demonstrates use of list variable in a playbook
+  hosts: all
+
+  vars_files:
+     - softwares.yml
+
+  tasks:
+    - name: Install the list of software tools in Ubuntu nodes
+      when: ansible_distribution == "Ubuntu"
+      apt: name="{{software_tools}}" state=latest update_cache=yes
+
+    - name: Install the list of software tools in CentOS nodes
+      when: ansible_distribution == "CentOS"
+      yum: name="{{software_tools}}" state=latest 
