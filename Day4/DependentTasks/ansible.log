@@ -1,0 +1,124 @@
+2020-09-09 22:58:34,766 p=3888 u=root n=ansible | ubuntu | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2020-09-09 22:58:34,932 p=3888 u=root n=ansible | centos | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2020-09-09 23:03:38,286 p=4036 u=root n=ansible | ERROR! this task 'debug' has extra params, which is only allowed in the following modules: shell, win_shell, include_vars, add_host, raw, include_role, meta, set_fact, include, import_tasks, script, import_role, include_tasks, group_by, command, win_command
+
+The error appears to be in '/root/Ansible/Day4/DependentTasks/dependent-tasks-playbook.yml': line 8, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: This task will proceed based on the outcome of the prev task
+      ^ here
+
+2020-09-09 23:04:33,912 p=4061 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:04:33,941 p=4061 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:04:37,876 p=4061 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:04:37,903 p=4061 u=root n=ansible | ok: [centos]
+2020-09-09 23:04:37,959 p=4061 u=root n=ansible | TASK [This task is going to fail] *************************************************************************************
+2020-09-09 23:04:39,337 p=4061 u=root n=ansible | fatal: [ubuntu]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.018133", "end": "2020-09-10 08:34:39.218324", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:34:39.200191", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:04:39,413 p=4061 u=root n=ansible | fatal: [centos]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.013656", "end": "2020-09-10 08:34:39.286855", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:34:39.273199", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:04:39,416 p=4061 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:04:39,417 p=4061 u=root n=ansible | centos                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:04:39,417 p=4061 u=root n=ansible | ubuntu                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:05:19,274 p=4126 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:05:19,299 p=4126 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:05:22,230 p=4126 u=root n=ansible | ok: [centos]
+2020-09-09 23:05:22,246 p=4126 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:05:22,298 p=4126 u=root n=ansible | TASK [This task is going to fail] *************************************************************************************
+2020-09-09 23:05:23,667 p=4126 u=root n=ansible | changed: [ubuntu]
+2020-09-09 23:05:23,792 p=4126 u=root n=ansible | changed: [centos]
+2020-09-09 23:05:23,850 p=4126 u=root n=ansible | TASK [This task will proceed based on the outcome of the prev task] ***************************************************
+2020-09-09 23:05:23,921 p=4126 u=root n=ansible | ok: [ubuntu] => {
+    "msg": "The previous task failed"
+}
+2020-09-09 23:05:23,949 p=4126 u=root n=ansible | ok: [centos] => {
+    "msg": "The previous task failed"
+}
+2020-09-09 23:05:23,956 p=4126 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:05:23,957 p=4126 u=root n=ansible | centos                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:05:23,958 p=4126 u=root n=ansible | ubuntu                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:08:01,260 p=4198 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:08:01,287 p=4198 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:08:04,755 p=4198 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:08:04,901 p=4198 u=root n=ansible | ok: [centos]
+2020-09-09 23:08:04,951 p=4198 u=root n=ansible | TASK [Some task] ******************************************************************************************************
+2020-09-09 23:08:06,313 p=4198 u=root n=ansible | changed: [ubuntu]
+2020-09-09 23:08:06,448 p=4198 u=root n=ansible | changed: [centos]
+2020-09-09 23:08:06,500 p=4198 u=root n=ansible | TASK [debug] **********************************************************************************************************
+2020-09-09 23:08:06,798 p=4198 u=root n=ansible | ok: [ubuntu] => {
+    "msg": "The previous task succeeded."
+}
+2020-09-09 23:08:06,801 p=4198 u=root n=ansible | ok: [centos] => {
+    "msg": "The previous task succeeded."
+}
+2020-09-09 23:08:06,884 p=4198 u=root n=ansible | TASK [This task will proceed based on the outcome of the prev task] ***************************************************
+2020-09-09 23:08:07,052 p=4198 u=root n=ansible | skipping: [ubuntu]
+2020-09-09 23:08:07,120 p=4198 u=root n=ansible | skipping: [centos]
+2020-09-09 23:08:07,137 p=4198 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:08:07,138 p=4198 u=root n=ansible | centos                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:08:07,138 p=4198 u=root n=ansible | ubuntu                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:12:25,627 p=4349 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:12:25,652 p=4349 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:12:29,290 p=4349 u=root n=ansible | ok: [centos]
+2020-09-09 23:12:30,182 p=4349 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:12:30,234 p=4349 u=root n=ansible | TASK [First task] *****************************************************************************************************
+2020-09-09 23:12:31,595 p=4349 u=root n=ansible | changed: [ubuntu]
+2020-09-09 23:12:31,691 p=4349 u=root n=ansible | changed: [centos]
+2020-09-09 23:12:31,750 p=4349 u=root n=ansible | TASK [This taks will be executed only if the First task succeeds] *****************************************************
+2020-09-09 23:12:31,936 p=4349 u=root n=ansible | ok: [ubuntu] => {
+    "msg": "The previous task succeeded."
+}
+2020-09-09 23:12:31,981 p=4349 u=root n=ansible | ok: [centos] => {
+    "msg": "The previous task succeeded."
+}
+2020-09-09 23:12:32,032 p=4349 u=root n=ansible | TASK [This task will be executed only if the First task fails] ********************************************************
+2020-09-09 23:12:32,207 p=4349 u=root n=ansible | skipping: [ubuntu]
+2020-09-09 23:12:32,243 p=4349 u=root n=ansible | skipping: [centos]
+2020-09-09 23:12:32,250 p=4349 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:12:32,251 p=4349 u=root n=ansible | centos                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:12:32,251 p=4349 u=root n=ansible | ubuntu                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-09 23:12:45,774 p=4414 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:12:45,798 p=4414 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:12:48,609 p=4414 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:12:48,686 p=4414 u=root n=ansible | ok: [centos]
+2020-09-09 23:12:48,735 p=4414 u=root n=ansible | TASK [First task] *****************************************************************************************************
+2020-09-09 23:12:50,163 p=4414 u=root n=ansible | fatal: [ubuntu]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.006313", "end": "2020-09-10 08:42:50.056020", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:42:50.049707", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:12:50,308 p=4414 u=root n=ansible | fatal: [centos]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.012309", "end": "2020-09-10 08:42:50.174492", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:42:50.162183", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:12:50,312 p=4414 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:12:50,313 p=4414 u=root n=ansible | centos                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:12:50,313 p=4414 u=root n=ansible | ubuntu                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-09-09 23:15:03,257 p=4482 u=root n=ansible | PLAY [This playbook will demonstrate how a following task can perform something when the previous task succeeds or fails] ***
+2020-09-09 23:15:03,283 p=4482 u=root n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2020-09-09 23:15:06,827 p=4482 u=root n=ansible | ok: [ubuntu]
+2020-09-09 23:15:07,049 p=4482 u=root n=ansible | ok: [centos]
+2020-09-09 23:15:07,099 p=4482 u=root n=ansible | TASK [First task] *****************************************************************************************************
+2020-09-09 23:15:08,468 p=4482 u=root n=ansible | fatal: [ubuntu]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.007893", "end": "2020-09-10 08:45:08.352354", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:45:08.344461", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:15:08,470 p=4482 u=root n=ansible | ...ignoring
+2020-09-09 23:15:08,575 p=4482 u=root n=ansible | fatal: [centos]: FAILED! => {"changed": true, "cmd": "/bin/false", "delta": "0:00:00.014230", "end": "2020-09-10 08:45:08.456567", "msg": "non-zero return code", "rc": 1, "start": "2020-09-10 08:45:08.442337", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2020-09-09 23:15:08,575 p=4482 u=root n=ansible | ...ignoring
+2020-09-09 23:15:08,627 p=4482 u=root n=ansible | TASK [This task will be executed only if the First task succeeds] *****************************************************
+2020-09-09 23:15:08,741 p=4482 u=root n=ansible | skipping: [ubuntu]
+2020-09-09 23:15:08,809 p=4482 u=root n=ansible | skipping: [centos]
+2020-09-09 23:15:08,870 p=4482 u=root n=ansible | TASK [This task will be executed only if the First task fails] ********************************************************
+2020-09-09 23:15:08,990 p=4482 u=root n=ansible | ok: [ubuntu] => {
+    "msg": "The previous task failed"
+}
+2020-09-09 23:15:09,095 p=4482 u=root n=ansible | ok: [centos] => {
+    "msg": "The previous task failed"
+}
+2020-09-09 23:15:09,103 p=4482 u=root n=ansible | PLAY RECAP ************************************************************************************************************
+2020-09-09 23:15:09,104 p=4482 u=root n=ansible | centos                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=1   
+2020-09-09 23:15:09,104 p=4482 u=root n=ansible | ubuntu                     : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=1   

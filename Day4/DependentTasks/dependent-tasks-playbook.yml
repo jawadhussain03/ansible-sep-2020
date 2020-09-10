@@ -1,0 +1,15 @@
+- name: This play will demonstrate how a following task can perform something when the previous task succeeds or fails
+  hosts: all
+  tasks:
+    - name: First task 
+      shell: /bin/false
+      register: output
+      ignore_errors: yes
+
+    - name: This task will be executed only if the First task succeeds
+      debug: msg="The previous task succeeded."
+      when: output.rc == 0
+     
+    - name: This task will be executed only if the First task fails 
+      debug: msg="The previous task failed"
+      when: output.rc == 1

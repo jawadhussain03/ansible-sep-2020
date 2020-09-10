@@ -1,6 +1,6 @@
 - name: This play will install, configure and deploy custom web page into nginx web server 
   hosts: all 
-  gather_facts: no
+  gather_facts: no 
 
   vars:
    - greeting_msg: DevOps!
@@ -10,6 +10,13 @@
    - my_conf_file.yml
 
   tasks:
+    - setup:
+        fact_path: setup.txt
+    - delegate_to: localhost
+      run_once: true
+      copy: 
+       dest: ./setup.txt
+
     - include: install-nginx-{{ansible_distribution|lower}}.yml
     - include: configure-nginx-{{ansible_distribution|lower}}.yml
     - include: common-nginx-tasks.yml
