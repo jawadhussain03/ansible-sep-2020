@@ -1,0 +1,7 @@
+---
+# handlers file for tomcat
+- name: Restart tomcat in Ubuntu ansible node
+  service: name=apache2 state=restarted
+
+- name: Restart tomcat in CentOS ansible node
+  service: name=httpd state=restarted

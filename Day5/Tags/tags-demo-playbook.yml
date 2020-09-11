@@ -1,0 +1,16 @@
+- name: Demonstratres use of tag
+  hosts: all 
+  tasks:
+    - debug: msg="Task 1"
+      tags:
+        - T1
+
+    - debug: msg="Task 2"
+      tags:
+        - T2
+
+    - name: Task 3
+      command: /bin/true
+      tags:
+        - T3
+

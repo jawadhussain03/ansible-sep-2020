@@ -1,0 +1,9 @@
+- name: Custom facts
+  hosts: all
+  become:  yes
+  tasks:
+    - name: Create custom facts folder
+      file: path=/etc/ansible/facts.d state=directory mode=0777
+
+    - name: Copy the custom facts files
+      copy: src=git_ver.fact dest=/etc/ansible/facts.d mode=0777 

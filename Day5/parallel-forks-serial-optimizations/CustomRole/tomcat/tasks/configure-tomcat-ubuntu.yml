@@ -1,0 +1,9 @@
+- name: Grant permission to tomcat document root in Ubuntu ansible node
+  copy: src=apache2.conf dest=/etc/apache2/apache2.conf backup=yes
+  notify:
+    - Restart tomcat in Ubuntu ansible node
+
+- name: Configure tomcat server document root folder in Ubuntu ansible node
+  copy: src=000-default.conf dest=/etc/apache2/sites-available/000-default.conf backup=yes
+  notify:
+    - Restart tomcat in Ubuntu ansible node

@@ -1,0 +1,4 @@
+---
+# vars file for tomcat
+conf_mgr_tool: Ansible
+hypervisor_tool: VMWARE Workstation
