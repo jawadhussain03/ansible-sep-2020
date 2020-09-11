@@ -1,0 +1,14 @@
+- name: Demonstrates on how to accept user inputs while running a playbook
+  hosts: localhost
+  vars_prompt:
+     - name: jdk_home
+       prompt: What is the JDK Home path?
+       private: no
+
+     - name: password
+       prompt: What is the root password?
+  tasks:
+     - debug: msg="JDK={{ jdk_home  }}"
+
+     - debug: msg="Password={{password}}"
+
