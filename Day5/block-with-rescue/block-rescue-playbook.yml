@@ -1,0 +1,16 @@
+- name: Demonstrates block rescue
+  hosts: localhost
+  tasks:
+     - name: Block demo
+       block:
+         - debug: msg="Task 1"
+   
+         - command: /bin/false
+
+         - debug: msg="Final task in the block"
+
+       rescue:
+         - debug: msg="Some task failed in the block"
+
+       always:
+         - debug: msg="This block will always run"

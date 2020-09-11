@@ -1,0 +1,8 @@
+- name: Demonstrates invoking custom ansible module
+  hosts: localhost
+  tasks:
+    - name: Invoke custom ansible hello module
+      hello: msg="TekTutor Ansible Module"
+      register: output
+
+    - debug: var=output
